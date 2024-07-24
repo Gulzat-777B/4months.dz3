@@ -4,6 +4,7 @@ import './App.css';
 function StopwatchApp() {
   const [isRunning, setIsRunning] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
+  const [results, setResults] = useState([]);
   const timerRef = useRef(null);
 
   useEffect(() => {
@@ -28,6 +29,8 @@ function StopwatchApp() {
     if (isRunning) {
       clearInterval(timerRef.current);
       setIsRunning(false);
+      // Add the current elapsed time to results
+      setResults([...results, elapsedTime]);
     }
   };
 
@@ -49,45 +52,24 @@ function StopwatchApp() {
 
   return (
     <div className="App">
-      <h1>Секундомер</h1>
+      <h1>Stopwatch</h1>
       <div className="timer">{formatTime(elapsedTime)}</div>
       <div className="buttons">
-        <button onClick={startTimer} disabled={isRunning}>Старт</button>
-        <button onClick={stopTimer} disabled={!isRunning}>Стоп</button>
-        <button onClick={resetTimer}>Сброс</button>
+        <button onClick={startTimer} disabled={isRunning}>Start</button>
+        <button onClick={stopTimer} disabled={!isRunning}>Stop</button>
+        <button onClick={resetTimer}>Reset</button>
+      </div>
+      <div className="results">
+        <h2>Results</h2>
         
+        <ul>
+          {results.map((result, index) => (
+            <li key={index}>{formatTime(result)}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
 }
 
 export default StopwatchApp;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function App() {
-//   return (
-//     <div className="App">
- 
-//     </div>
-//   );
-// }
-
-// export default App;

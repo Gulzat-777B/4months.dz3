@@ -1,41 +1,61 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 
+  background-image: url(./img/фон.jpg);
+  background-size: cover;
+}
 
 .App {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .timer {
-    font-size: 3em;
-    margin-bottom: 20px;
-  }
-  
-  .buttons {
-    margin-top: 20px;
-  }
-  
-  button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  
+  text-align: center;
+  max-width: 100%; 
+  padding: 25px;
+  /* border-radius: 8px;
+  border: 3px solid rgb(129, 129, 153);
+  box-shadow: 10px 10px 10px 0px rgba(167, 167, 167, 0.1);  */
+}
+
+h1 {
+  font-size: 40px;
+  color: aliceblue;
+  margin-bottom: 20px;
+}
+
+
+.timer {
+  font-size: 25px;
+  color: rgb(229, 207, 135);
+  margin-bottom: 25px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 18px;
+  color: white;
+  background-color: #4578af;
+  border-radius: 5px;
+  padding: 8px 30px;
+  margin: 0 10px;
+  cursor: pointer;
+ }
+
+button:hover {
+  background-color: #f0f4f8;
+  color: black;
+}
+
+
+h2 {
+  font-size: 30px;
+  color: rgb(229, 207, 135);
+  margin-top: 25px;
+}
+
+ul li {
+  color: #f0f4f8;
+}
